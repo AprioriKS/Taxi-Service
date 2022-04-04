@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="[%5p ] %d{HH:mm:ss,sss}, %t %-5l: %L - %m%n"/>
+    </Console>
+    <!--change fileName to yours-->
+    <File name="File" fileName="ABSOLUTE_PATH">
+      <PatternLayout>
+        <Pattern>[%5p ] %d{HH:mm:ss,sss}, %t %-5l: %L - %m%n</Pattern>
+      </PatternLayout>
+    </File>
+  </Appenders>
+  <Loggers>
+    <Logger name="taxi" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="File"/>
+    </Logger>
+    <Root level="error">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="File"/>
+    </Root>
+  </Loggers>
+</configuration>
